@@ -2,6 +2,28 @@
 
 You may have multiple design documents for this project. Place them all in this folder. File naming is up to you, but it should be clear what the document is about. At the bare minimum, you will want a pre/post UML diagram for the project. 
 
+OVERVIEW
+
+Our app will take UK crime data and display it on an interactive map using the longitude and latitude associated with each crime report. The data comes from crimes committed in January 2023 in Leicester, England. It includes the following categories of crimes: 
+
+    anti-social behaviour
+    bicycle-theft
+    burglary
+    criminal damage arson
+    drugs
+    other theft
+    possession of weapons
+    public order
+    robbery
+    shoplifting
+    theft from the person
+    vehicle crime
+    other crime
+
+The app will read in the JSON-formatted data from the UK police data API, put the data into a list that can be sorted by category, and then displayed on a map using the latitude and longitude points included with each crime report. 
+
+Users will also be able to create their own sub-lists and write them out in various file formats. 
+
 ```mermaid
 classDiagram
     class SearchBox {
@@ -40,6 +62,25 @@ classDiagram
         +String streetName
         +String neighborhood
         +displayDetails()
+    }
+    class ReadURL {
+    }
+    class Crime {
+        - category: String
+        - locationType: String
+        - latitude: float
+        - streetID: int
+        - streetName: String
+        - longitude: float
+        - outcomeStatusCategory: String
+        - outcomeStatusDate: String
+        - persistentID: String
+        - id: int
+        - month: String
+    }
+    class JSONMapper {
+    }
+    class FileWriter {
     }
     SearchBox --> MapView : provides search query
     MapView --> CrimeDetails : selects crime
