@@ -63,7 +63,8 @@ classDiagram
         +String neighborhood
         +displayDetails()
     }
-    class ReadURL {
+    class NetUtils {
+        + getURLContents(String urlStr: InputStream
     }
     class Crime {
         - category: String
@@ -79,8 +80,18 @@ classDiagram
         - month: String
     }
     class JSONMapper {
+        + writeJSONFile(InputStream contents): List~Crime~
     }
     class FileWriter {
+        - writeCSVList(Collection~Crime~, OutputStream out): void
+        - writeXMLList(Collection~Crime~, OutputStream out): void
+        - writeJSONList(Collection~Crime~, OutputStream out): void
+        - writePrettyList(Collection~Crime~, OutputStream out): void
+        + writeOutFiles(Collection~Crime~, Formats format, OutputStream out): void
+    }
+    class Formats {
+    <<enumerator>>
+    JSON, XML, CSV, PRETTY
     }
     SearchBox --> MapView : provides search query
     MapView --> CrimeDetails : selects crime
