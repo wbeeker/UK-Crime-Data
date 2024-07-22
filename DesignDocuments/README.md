@@ -99,5 +99,7 @@ classDiagram
     MapView --> StatisticsPanel : provides crime data
     MapView --> CrimeTimeline : provides crime data
     MapView --> LocationDetails : selects location
+    NetUtils --> JSONMapper : converts URL contents to Crime objects
+    Crime --> JSONMapper 
 
 ```
