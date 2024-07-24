@@ -59,6 +59,51 @@ classDiagram
         +String neighborhood
         +displayDetails()
     }
+    class NetUtils {
+        + getURLContents(String urlStr: InputStream)
+    }
+    class Crime {
+        - category: String
+        - locationType: String
+        - latitude: float
+        - streetID: int
+        - streetName: String
+        - longitude: float
+        - outcomeStatusCategory: String
+        - outcomeStatusDate: String
+        - persistentID: String
+        - id: int
+        - month: String
+    }
+    class JSONMapper {
+        + writeJSONFile(InputStream contents): List~Crime~
+    }
+    class FileWriter {
+        - writeCSVList(Collection~Crime~, OutputStream out): void
+        - writeXMLList(Collection~Crime~, OutputStream out): void
+        - writeJSONList(Collection~Crime~, OutputStream out): void
+        - writePrettyList(Collection~Crime~, OutputStream out): void
+        + writeOutFiles(Collection~Crime~, Formats format, OutputStream out): void
+    }
+    class Formats {
+    <<enumerator>>
+    JSON, XML, CSV, PRETTY
+    }
+    class CrimeList {
+        + CrimeList()
+        + getCrimes() : List~String~
+        + clear() : void
+        + count() : int
+        + addToList(String str, Stream~List~ sorted) : void
+        + removeFromList(String str) : void
+    }
+    class CrimeSort {
+        -Set~Crime~ crimes
+        +CrimeList(Set~Crime~ crimes)
+        -sortByName(Stream~Crime~ crime) : Stream~Crime~
+        -sortByDate(Stream~Crime~ crime) : Stream~BoardGame~
+        -sortStream(Stream~Crime~ crime, Crime sortOn, boolean ascending) : Stream~Crime~
+    }
     SearchBox --> MapView : provides search query
     MapView --> CrimeDetails : selects crime
     MapView --> StatisticsPanel : provides crime data
