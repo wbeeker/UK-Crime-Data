@@ -58,7 +58,7 @@ classDiagram
         +displayDetails()
     }
     class NetUtils {
-        + getURLContents(String urlStr: InputStream
+        + getURLContents(String urlStr: InputStream)
     }
     class Crime {
         - category: String
