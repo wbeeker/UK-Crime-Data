@@ -89,7 +89,6 @@ classDiagram
     }
     SearchBox --> MapView : provides search query
     MapView --> CrimeDetails : selects crime
-    FilterOptions --> MapView : filters results
     MapView --> StatisticsPanel : provides crime data
     MapView --> CrimeTimeline : provides crime data
     MapView --> LocationDetails : selects location
