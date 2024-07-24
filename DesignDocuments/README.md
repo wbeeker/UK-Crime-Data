@@ -20,12 +20,6 @@ classDiagram
         +String outcomeStatus
         +displayDetails()
     }
-    class FilterOptions {
-        +String crimeType
-        +Date date
-        +String outcomeStatus
-        +applyFilters()
-    }
     class StatisticsPanel {
         +Int totalCrimes
         +String mostCommonCrime
