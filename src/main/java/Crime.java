@@ -119,6 +119,26 @@ public class Crime {
     }
 
     /**
+     * Formats the crime objet as a string.
+     * @return toString of the crime object
+     */
+    @Override
+    public String toString() {
+        return "Crime {\n" +
+                "\tcategory='" + category + '\n' +
+                "\tlocationLatitude='" + locationLatitude + '\n' +
+                "\tstreetID=" + streetID + '\n' +
+                "\tstreetName='" + streetName + '\n' +
+                "\tlocationLongitude='" + locationLongitude + '\n' +
+                "\toutcomeCategory='" + outcomeCategory + '\n' +
+                "\toutcomeDate='" + outcomeDate + '\n' +
+                "\tpersistentID='" + persistentID + '\n' +
+                "\tID=" + ID + '\n' +
+                "\tmonth='" + month + '\n' +
+                '}';
+    }
+
+    /**
      * Compares Crime objects to see if they're equal.
      * @param o crime object
      * @return true or false
