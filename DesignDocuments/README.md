@@ -89,6 +89,21 @@ classDiagram
     <<enumerator>>
     JSON, XML, CSV, PRETTY
     }
+    class CrimeList {
+        + CrimeList()
+        + getCrimes() : List~String~
+        + clear() : void
+        + count() : int
+        + addToList(String str, Stream~List~ sorted) : void
+        + removeFromList(String str) : void
+    }
+    class CrimeSort {
+        -Set~Crime~ crimes
+        +CrimeList(Set~Crime~ crimes)
+        -sortByName(Stream~Crime~ crime) : Stream~Crime~
+        -sortByDate(Stream~Crime~ crime) : Stream~BoardGame~
+        -sortStream(Stream~Crime~ crime, Crime sortOn, boolean ascending) : Stream~Crime~
+    }
     SearchBox --> MapView : provides search query
     MapView --> CrimeDetails : selects crime
     MapView --> StatisticsPanel : provides crime data
