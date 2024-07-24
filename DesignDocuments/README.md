@@ -20,29 +20,7 @@ Our app will take UK crime data and display it on an interactive map using the l
     vehicle crime
     other crime
 
-A typical crime report looks like this:
-
-{
-    "category": "violent-crime",
-    "location_type": "Force",
-    "location": {
-      "latitude": "52.629187",
-      "street": {
-        "id": 1738279,
-        "name": "On or near Carlton Street"
-      },
-      "longitude": "-1.134096"
-    },
-    "context": "",
-    "outcome_status": {
-      "category": "Unable to prosecute suspect",
-      "date": "2023-02"
-    },
-    "persistent_id": "12e9d85fb1ba59758dde1d335f479e79f57f8f1853309a1bd718404449d92a28",
-    "id": 107768626,
-    "location_subtype": "",
-    "month": "2023-01"
-  }
+A typical crime report inludes data like the category of crime, the longitude and latitude of where it was committed, an ID number, the month the crime was committed, and an outcome status if the case has been resolved. 
 
 The app will read in the JSON-formatted data from the UK police data API, put the data into a list that can be sorted by category, and then displayed on a map using the latitude and longitude points included with each crime report. 
 
