@@ -15,8 +15,11 @@ public class CrimeGUI extends JFrame {
     private JPanel panel;
     private JTextField crimeTextField;
     private JButton crimeButton;
+    private JButton detailsButton;
     private JButton mapButton;
     private JButton statsButton;
+    private JButton timelineButton;
+    private JButton locationButton;
 
     private JPanel topPanel;
     private JPanel crimePanel;
@@ -45,18 +48,27 @@ public class CrimeGUI extends JFrame {
         crimeTextField = new JTextField(10);
         crimeButton = new JButton("Crime Search");
         crimeButton.addActionListener(new crimeSearchListener());
+        detailsButton = new JButton("Crime Details");
+        detailsButton.addActionListener(new detailsListener());
         mapButton = new JButton("Crime Map");
         mapButton.addActionListener(new mapListener());
         statsButton = new JButton("Crime Stats");
         statsButton.addActionListener(new statsListener());
+        locationButton = new JButton("Location");
+        locationButton.addActionListener(new locationListener());
+        timelineButton = new JButton("Timeline");
+        timelineButton.addActionListener(new timelineListener());
+
+
 
 
         crimePanel.add(crimeTextField);
         crimePanel.add(crimeButton);
-
-
+        buttonPanel.add(detailsButton);
         buttonPanel.add(mapButton);
         buttonPanel.add(statsButton);
+        buttonPanel.add(timelineButton);
+        buttonPanel.add(locationButton);
 
 
         topPanel.add(crimePanel);
@@ -74,6 +86,14 @@ public class CrimeGUI extends JFrame {
 
     public static void main(String[] args) {
         new CrimeGUI();
+    }
+
+    
+    private class detailsListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.setText("  Details");
+        }
     }
 
     private class crimeSearchListener implements ActionListener {
@@ -97,4 +117,19 @@ public class CrimeGUI extends JFrame {
             textArea.setText("  Stats");
         }
     }
+
+    private class timelineListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.setText("  Timeline");
+        }
+    }
+
+    private class locationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.setText("  Location Details");
+        }
+    }
+
 }
