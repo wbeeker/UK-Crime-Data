@@ -142,6 +142,13 @@ public class Crime {
                 '}';
     }
 
+    public String getInfo() {
+        return  "Month: " + month + '\n' +
+                "Street Name: " + streetName + '\n' +
+                "Outcome: " + outcomeCategory + '\n' +
+                "Outcome Date: " + outcomeDate + '\n';
+    }
+
     /**
      * Compares Crime objects to see if they're equal.
      * @param o crime object
