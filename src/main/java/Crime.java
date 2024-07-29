@@ -142,7 +142,10 @@ public class Crime {
                 '}';
     }
 
-    
+    /**
+     * Formats the crime object as a string.
+     * @return crime object as a string for map display
+     */
     public String getInfo() {
         return  "Month: " + month + '\n' +
                 "Street Name: " + streetName + '\n' +

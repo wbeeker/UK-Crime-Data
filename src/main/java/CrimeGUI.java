@@ -49,6 +49,10 @@ public class CrimeGUI extends JFrame {
 
     private boolean crimeSearchClicked = false;
 
+
+    /**
+     * This class creates the GUI for the Crime application.
+     */
     public CrimeGUI() {
         setTitle("Crime: UK Police Data GUI");
         setSize(1250, 725);
