@@ -21,12 +21,16 @@ public class Crime {
     /** The persistent ID string (mix of letters and numbers). */
     private String persistentID;
     /** The ID number for the crime report. */
-    private int ID;
+    private int id;
     /** The month the crime occurred. */
     private String month;
 
+    /** Default constructor to instantiate Crime class during deserialization. */
+    public Crime() {
+    }
+
     public Crime (String category, String locationLatitude, int streetID, String streetName,
-                  String locationLongitude, String outcomeCategory, String outcomeDate, String persistentID, int ID,
+                  String locationLongitude, String outcomeCategory, String outcomeDate, String persistentID, int id,
                   String month) {
         this.category = category;
         this.locationLatitude = locationLatitude;
@@ -36,7 +40,7 @@ public class Crime {
         this.outcomeCategory = outcomeCategory;
         this.outcomeDate = outcomeDate;
         this.persistentID = persistentID;
-        this.ID = ID;
+        this.id = id;
         this.month = month;
     }
 
@@ -107,7 +111,7 @@ public class Crime {
      * @return ID number
      */
     public int getID() {
-        return ID;
+        return id;
     }
 
     /**
@@ -133,7 +137,7 @@ public class Crime {
                 "\toutcomeCategory='" + outcomeCategory + '\n' +
                 "\toutcomeDate='" + outcomeDate + '\n' +
                 "\tpersistentID='" + persistentID + '\n' +
-                "\tID=" + ID + '\n' +
+                "\tID=" + id + '\n' +
                 "\tmonth='" + month + '\n' +
                 '}';
     }
@@ -149,7 +153,7 @@ public class Crime {
         if (o == null || getClass() != o.getClass()) return false;
         Crime crime = (Crime) o;
         return streetID == crime.streetID
-                && ID == crime.ID
+                && id == crime.id
                 && Objects.equals(category, crime.category)
                 && Objects.equals(locationLatitude, crime.locationLatitude)
                 && Objects.equals(streetName, crime.streetName)
@@ -167,6 +171,6 @@ public class Crime {
     @Override
     public int hashCode() {
         return Objects.hash(category, locationLatitude, streetID, streetName, locationLongitude,
-                outcomeCategory, outcomeDate, persistentID, ID, month);
+                outcomeCategory, outcomeDate, persistentID, id, month);
     }
 }
