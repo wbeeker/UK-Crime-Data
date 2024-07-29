@@ -142,6 +142,7 @@ public class Crime {
                 '}';
     }
 
+    
     public String getInfo() {
         return  "Month: " + month + '\n' +
                 "Street Name: " + streetName + '\n' +

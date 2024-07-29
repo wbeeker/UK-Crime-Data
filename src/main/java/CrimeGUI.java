@@ -51,7 +51,7 @@ public class CrimeGUI extends JFrame {
 
     public CrimeGUI() {
         setTitle("Crime: UK Police Data GUI");
-        setSize(1000, 500);
+        setSize(1250, 725);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         panel = new JPanel();
@@ -126,7 +126,8 @@ public class CrimeGUI extends JFrame {
             }
             is.close();
             os.close();
-            JLabel label = new JLabel(new ImageIcon((new ImageIcon("image.jpg")).getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH)));
+            JLabel label = new JLabel(new ImageIcon((new ImageIcon("image.jpg"))
+                        .getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH)));
             mapPanel.removeAll();
             mapPanel.add(label);
             mapPanel.revalidate();
@@ -139,7 +140,9 @@ public class CrimeGUI extends JFrame {
     public void createMap() {
         String latitude = "52.629729";
         String longitude = "-1.131592";
-        String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=14&size=512x512&maptype=satellite&key=AIzaSyA0q8-kHzgWZKLG_l_jXFEu0kjDgfu8QpA";
+        String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" +
+                           latitude + "," + longitude +
+                          "&zoom=14&size=512x512&maptype=satellite&key=AIzaSyA0q8-kHzgWZKLG_l_jXFEu0kjDgfu8QpA";
         createMapImage(imageUrl);
     }
     
@@ -153,7 +156,9 @@ public class CrimeGUI extends JFrame {
                 markers += "&markers=color:red%7C" + crime.getLocationLatitude() + "," + crime.getLocationLongitude();
             }
         }
-        String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=14&size=512x512&maptype=satellite" + markers + "&key=AIzaSyA0q8-kHzgWZKLG_l_jXFEu0kjDgfu8QpA";
+        String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" +
+                           latitude + "," + longitude + "&zoom=14&size=512x512&maptype=satellite" +
+                           markers + "&key=AIzaSyA0q8-kHzgWZKLG_l_jXFEu0kjDgfu8QpA";
         createMapImage(imageUrl);
     }
     
