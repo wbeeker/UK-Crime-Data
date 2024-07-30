@@ -8,12 +8,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -35,10 +36,10 @@ public class CrimeGUI extends JFrame {
     private JComboBox categories;
     /** Buttons to navigate the GUI */
     private JButton crimeButton;
-    //private JButton detailsButton;
+    private JButton addCrimeButton;
     private JButton mapButton;
     private JButton statsButton;
-    //private JButton timelineButton;
+    private JButton clearListButton;
     //private JButton locationButton;
     /** Panels to hold different sections of the GUI */
     private JPanel topPanel;
@@ -47,77 +48,104 @@ public class CrimeGUI extends JFrame {
     /** Text areas to display information */
     private JTextArea info;
     private JTextArea stats;
+    private JTextArea listOfCrimes;
     private JScrollPane infoPane;
     private JScrollPane statsPane;
     /** Boolean to check if crime search button has been clicked */
     private boolean crimeSearchClicked = false;
+
+    private CrimeManager crimeManager;
 
 
     /**
      * Constructor to create the CrimeGUI object.
      */
     public CrimeGUI() {
+
+        this.crimeManager = new CrimeManager();
+    
         setTitle("Crime: UK Police Data GUI");
         setSize(1270, 750);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+    
         // Create the main panel and set its layout
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         buttonPanel = new JPanel();
         topPanel = new JPanel();
         mapPane = new JScrollPane();
+        JPanel eastPanel = new JPanel();
 
+
+    
         // Create text areas and scroll panes
         info = new JTextArea();
         stats = new JTextArea();
         infoPane = new JScrollPane(info);
         statsPane = new JScrollPane(stats);
         infoPane.setPreferredSize(new Dimension(300, 700));
-        statsPane.setPreferredSize(new Dimension(300, 700));
+        statsPane.setPreferredSize(new Dimension(300, 350));
         infoPane.setBorder(new TitledBorder("Crime Info"));
         statsPane.setBorder(new TitledBorder("Crime Stats"));
         mapPane.setBorder(new TitledBorder("Leicester UK Map"));
+    
+        // Create the second scroll pane
+        eastPanel.setLayout(new BoxLayout(eastPanel, BoxLayout.Y_AXIS));
+        listOfCrimes = new JTextArea();
 
+        //JTextArea listOfCrimes = new JTextArea();
+        JScrollPane listOfCrimesPane = new JScrollPane(listOfCrimes);
+        listOfCrimes.setPreferredSize(new Dimension(300, 350)); // Adjust size as needed
+        listOfCrimes.setBorder(new TitledBorder("Crimes Added to List"));
+    
         createMap();
-
+    
         // Create the drop-down list of crime categories
         List<Crime> crimes = NetUtils.getURLContents();
-        Set<String> categorySet = new HashSet<>();
         for (Crime crime : crimes) {
-            categorySet.add(crime.getCategory());
+            crimeManager.addCrime(crime);
         }
-        categories = new JComboBox(categorySet.toArray(new String[0]));
-
+        List<Crime> sortedCrimes = crimeManager.getCrimes();
+        List<String> categoryList = new ArrayList<>();
+        for (Crime crime : sortedCrimes) {
+            if (!categoryList.contains(crime.getCategory())) {
+                categoryList.add(crime.getCategory());
+            }
+        }
+        Collections.sort(categoryList);
+        categories = new JComboBox(categoryList.toArray(new String[0]));
+    
         // Create the buttons and add action listeners
         crimeButton = new JButton("Crime Search");
         crimeButton.addActionListener(new crimeSearchListener());
-        //detailsButton = new JButton("Crime Details");
-        //detailsButton.addActionListener(new detailsListener());
+        addCrimeButton = new JButton("Add Crime");
+        addCrimeButton.addActionListener(new addCrimeListener());
         mapButton = new JButton("Show Crime Locations");
         mapButton.addActionListener(new mapListener());
         statsButton = new JButton("Populate Crime Stats");
         statsButton.addActionListener(new statsListener());
-        //locationButton = new JButton("Location");
-        //locationButton.addActionListener(new locationListener());
-        //timelineButton = new JButton("Timeline");
-        //timelineButton.addActionListener(new timelineListener());
-
+        clearListButton = new JButton("Clear List");
+        clearListButton.addActionListener(new clearListListener());
+    
         // Add components to the panels
         topPanel.add(categories);
         topPanel.add(crimeButton);
-        //buttonPanel.add(detailsButton);
+        buttonPanel.add(addCrimeButton);
         buttonPanel.add(mapButton);
         buttonPanel.add(statsButton);
-       // buttonPanel.add(timelineButton);
-        //buttonPanel.add(locationButton);
+        buttonPanel.add(clearListButton);
+    
+        eastPanel.add(statsPane);
+        eastPanel.add(listOfCrimes);
+    
         panel.add(topPanel, BorderLayout.NORTH);
         panel.add(buttonPanel, BorderLayout.SOUTH);
         panel.add(infoPane, BorderLayout.WEST);
-        panel.add(statsPane, BorderLayout.EAST);
         panel.add(mapPane, BorderLayout.CENTER);
+        panel.add(eastPanel, BorderLayout.EAST);
+    
         add(panel);
-
+    
         setVisible(true);
     }
 
@@ -187,12 +215,6 @@ public class CrimeGUI extends JFrame {
         new CrimeGUI();
     }
 
-    /*private class detailsListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            //textArea.setText("  Details");
-        }
-    }*/
 
     /**
      * Action listener for the crime search button.
@@ -260,14 +282,28 @@ public class CrimeGUI extends JFrame {
     }
 }
 
-    /*private class timelineListener implements ActionListener {
+    private class addCrimeListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //textArea.setText("  Timeline");
+            if (crimeSearchClicked) {
+                String selectedCategory = (String) categories.getSelectedItem();
+                listOfCrimes.append(selectedCategory + "\n");
+                crimeSearchClicked = false;
+        }
+    }
+}
+
+  
+
+    private class clearListListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            listOfCrimes.setText(""); // Clear the JTextArea
+            crimeManager.clearCrimes(); // Clear the CrimeManager
         }
     }
 
-    private class locationListener implements ActionListener {
+    /*private class locationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             //textArea.setText("  Location Details");
