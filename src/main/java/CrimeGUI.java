@@ -22,60 +22,66 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 
+/**
+ * This class represents a graphical user interface for the Crime application.
+ */
 public class CrimeGUI extends JFrame {
-
+    /** Panel to hold main content of GUI */
     private JPanel panel;
-    private JTextField crimeTextField;
+    /** Drop-down list of crime categories */
     private JComboBox categories;
+    /** Buttons to navigate the GUI */
     private JButton crimeButton;
-    private JButton detailsButton;
+    //private JButton detailsButton;
     private JButton mapButton;
     private JButton statsButton;
-    private JButton timelineButton;
-    private JButton locationButton;
-
+    //private JButton timelineButton;
+    //private JButton locationButton;
+    /** Panels to hold different sections of the GUI */
     private JPanel topPanel;
     private JPanel buttonPanel;
-    private JPanel mapPanel;
-
+    private JScrollPane mapPane;
+    /** Text areas to display information */
     private JTextArea info;
     private JTextArea stats;
-    private JScrollPane scrollPane;
-    private JScrollPane scrollPane2;
-
+    private JScrollPane infoPane;
+    private JScrollPane statsPane;
+    /** Boolean to check if crime search button has been clicked */
     private boolean crimeSearchClicked = false;
 
 
     /**
-     * This class creates the GUI for the Crime application.
+     * Constructor to create the CrimeGUI object.
      */
     public CrimeGUI() {
         setTitle("Crime: UK Police Data GUI");
-        setSize(1250, 725);
+        setSize(1270, 750);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Create the main panel and set its layout
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
         buttonPanel = new JPanel();
         topPanel = new JPanel();
-        mapPanel = new JPanel();
+        mapPane = new JScrollPane();
 
+        // Create text areas and scroll panes
         info = new JTextArea();
         stats = new JTextArea();
-        scrollPane = new JScrollPane(info);
-        scrollPane2 = new JScrollPane(stats);
-        scrollPane.setPreferredSize(new Dimension(300, 700));
-        scrollPane2.setPreferredSize(new Dimension(300, 700));
-
-        scrollPane.setBorder(new TitledBorder("Crime Info"));
-        scrollPane2.setBorder(new TitledBorder("Crime Stats"));
+        infoPane = new JScrollPane(info);
+        statsPane = new JScrollPane(stats);
+        infoPane.setPreferredSize(new Dimension(300, 700));
+        statsPane.setPreferredSize(new Dimension(300, 700));
+        infoPane.setBorder(new TitledBorder("Crime Info"));
+        statsPane.setBorder(new TitledBorder("Crime Stats"));
+        mapPane.setBorder(new TitledBorder("Leicester UK Map"));
 
         createMap();
 
+        // Create the drop-down list of crime categories
         List<Crime> crimes = NetUtils.getURLContents();
         Set<String> categorySet = new HashSet<>();
         for (Crime crime : crimes) {
@@ -83,40 +89,43 @@ public class CrimeGUI extends JFrame {
         }
         categories = new JComboBox(categorySet.toArray(new String[0]));
 
-        crimeTextField = new JTextField(10);
+        // Create the buttons and add action listeners
         crimeButton = new JButton("Crime Search");
         crimeButton.addActionListener(new crimeSearchListener());
-        detailsButton = new JButton("Crime Details");
-        detailsButton.addActionListener(new detailsListener());
-        mapButton = new JButton("Crime Map");
+        //detailsButton = new JButton("Crime Details");
+        //detailsButton.addActionListener(new detailsListener());
+        mapButton = new JButton("Show Crime Locations");
         mapButton.addActionListener(new mapListener());
-        statsButton = new JButton("Crime Stats");
+        statsButton = new JButton("Populate Crime Stats");
         statsButton.addActionListener(new statsListener());
-        locationButton = new JButton("Location");
-        locationButton.addActionListener(new locationListener());
-        timelineButton = new JButton("Timeline");
-        timelineButton.addActionListener(new timelineListener());
+        //locationButton = new JButton("Location");
+        //locationButton.addActionListener(new locationListener());
+        //timelineButton = new JButton("Timeline");
+        //timelineButton.addActionListener(new timelineListener());
 
+        // Add components to the panels
         topPanel.add(categories);
         topPanel.add(crimeButton);
-
-        buttonPanel.add(detailsButton);
+        //buttonPanel.add(detailsButton);
         buttonPanel.add(mapButton);
         buttonPanel.add(statsButton);
-        buttonPanel.add(timelineButton);
-        buttonPanel.add(locationButton);
-
+       // buttonPanel.add(timelineButton);
+        //buttonPanel.add(locationButton);
         panel.add(topPanel, BorderLayout.NORTH);
         panel.add(buttonPanel, BorderLayout.SOUTH);
-        panel.add(scrollPane, BorderLayout.WEST);
-        panel.add(scrollPane2, BorderLayout.EAST);
-        panel.add(mapPanel, BorderLayout.CENTER);
+        panel.add(infoPane, BorderLayout.WEST);
+        panel.add(statsPane, BorderLayout.EAST);
+        panel.add(mapPane, BorderLayout.CENTER);
         add(panel);
 
         setVisible(true);
-        
     }
 
+    
+    /**
+     * Creates a map image from a URL.
+     * @param imageUrl the URL of the image
+     */
     public void createMapImage(String imageUrl) {
         try {
             String destinationFile = "image.jpg";
@@ -132,15 +141,19 @@ public class CrimeGUI extends JFrame {
             os.close();
             JLabel label = new JLabel(new ImageIcon((new ImageIcon("image.jpg"))
                         .getImage().getScaledInstance(630, 600, java.awt.Image.SCALE_SMOOTH)));
-            mapPanel.removeAll();
-            mapPanel.add(label);
-            mapPanel.revalidate();
-            mapPanel.repaint();
+            JPanel imagePanel = new JPanel();
+            imagePanel.add(label);
+            mapPane.setViewportView(imagePanel);
+            mapPane.revalidate();
+            mapPane.repaint();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     
+    /**
+     * Creates a map image at a specific latitude and longitude.
+     */
     public void createMap() {
         String latitude = "52.629729";
         String longitude = "-1.131592";
@@ -150,6 +163,10 @@ public class CrimeGUI extends JFrame {
         createMapImage(imageUrl);
     }
     
+    /**
+     * Creates a map image with markers at specific latitude and longitude points.
+     * @param selectedCategory the category of crime to display on the map
+     */
     public void createMapWithMarkers(String selectedCategory) {
         String latitude = "52.629729";
         String longitude = "-1.131592";
@@ -170,13 +187,16 @@ public class CrimeGUI extends JFrame {
         new CrimeGUI();
     }
 
-    private class detailsListener implements ActionListener {
+    /*private class detailsListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             //textArea.setText("  Details");
         }
-    }
+    }*/
 
+    /**
+     * Action listener for the crime search button.
+     */
     private class crimeSearchListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -194,6 +214,9 @@ public class CrimeGUI extends JFrame {
         }
     }
     
+    /**
+     * Action listener for the map button.
+     */
     private class mapListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -204,9 +227,15 @@ public class CrimeGUI extends JFrame {
         }
     }
     
+    /**
+     * Action listener for the stats button.
+     */
     private class statsListener implements ActionListener {
         @Override
     public void actionPerformed(ActionEvent e) {
+        if (!crimeSearchClicked) {
+            return;
+        }
         String selectedCategory = (String) categories.getSelectedItem();
         List<Crime> crimes = NetUtils.getURLContents();
         int count = 0;
@@ -231,7 +260,7 @@ public class CrimeGUI extends JFrame {
     }
 }
 
-    private class timelineListener implements ActionListener {
+    /*private class timelineListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             //textArea.setText("  Timeline");
@@ -243,5 +272,5 @@ public class CrimeGUI extends JFrame {
         public void actionPerformed(ActionEvent e) {
             //textArea.setText("  Location Details");
         }
-    }
+    }*/
 }
