@@ -120,7 +120,8 @@ public class Crime {
      * @return the concise string representation of the Crime object
      */
     public String getInfo() {
-        return "Month: " + month + '\n' +
+        return  "Category: " + category + '\n' +
+                "Month: " + month + '\n' +
                 "Street Name: " + streetName + '\n' +
                 "Outcome: " + outcomeCategory + '\n' +
                 "Outcome Date: " + outcomeDate + '\n';
