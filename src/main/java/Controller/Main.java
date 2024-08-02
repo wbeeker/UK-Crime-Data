@@ -1,3 +1,8 @@
+package Controller;
+
+import Model.CrimeManager;
+import View.CrimeView;
+
 public class Main {
     /**
      * Main method to run the program.

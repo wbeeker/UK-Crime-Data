@@ -1,7 +1,10 @@
+package Model.Formatters;
 import java.util.Collection;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+import Model.Crime;
 
 
 @JacksonXmlRootElement(localName = "crimeList")

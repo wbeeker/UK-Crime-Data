@@ -1,6 +1,11 @@
+package Model.Net;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import Model.Crime;
+import Model.CrimeBean;
+import Model.CrimeBeanMapper;
 
 import java.io.*;
 import java.io.FileWriter;

@@ -89,21 +89,17 @@ classDiagram
     <<enumerator>>
     JSON, XML, CSV, PRETTY
     }
-    class CrimeList {
-        + CrimeList()
-        + getCrimes() : List~String~
-        + clear() : void
-        + count() : int
-        + addToList(String str, Stream~List~ sorted) : void
-        + removeFromList(String str) : void
+    class CrimeManager {
+        + CrimeManager()
+        + addCrime(Crime crime) : void
+        + addSpecificCrimes(List<Crime> newCrimes) : void
+        + clearCrimes() : void
+        + countCrimes() : int
+        - sortCrimes() : void
+        + getCrimes() : List<Crime>
+        + saveCrimesToFile(String filename), : void
     }
-    class CrimeSort {
-        -Set~Crime~ crimes
-        +CrimeList(Set~Crime~ crimes)
-        -sortByName(Stream~Crime~ crime) : Stream~Crime~
-        -sortByDate(Stream~Crime~ crime) : Stream~Crime~
-        -sortStream(Stream~Crime~ crime, Crime sortOn, boolean ascending) : Stream~Crime~
-    }
+    
     SearchBox --> MapView : provides search query
     MapView --> CrimeDetails : selects crime
     MapView --> StatisticsPanel : provides crime data
@@ -111,9 +107,8 @@ classDiagram
     MapView --> LocationDetails : selects location
     NetUtils --> JSONMapper : converts URL contents to Crime objects
     Crime -- JSONMapper
-    Crime --> CrimeList
-    CrimeList -- CrimeSort
-    CrimeList --> MapView
-    CrimeSort --> MapView
+    Crime --> CrimeManager
+    CrimeManager --> MapView
+    CrimeManager --> MapView
 
 ```
