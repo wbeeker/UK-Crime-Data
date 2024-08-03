@@ -116,7 +116,7 @@ class CrimeBean {
         + getLongitude(): String
         + getStreetName(): String
         + toString(): String
-        class Location {
+        + class Location 
         - latitude: String
         - street: Street
         - longitude: String
@@ -127,8 +127,7 @@ class CrimeBean {
         + getLongitude(): String
         + setLongitude(String longitude): void
         + toString(): String
-}
-        class Street {
+        + class Street 
         - id: int
         - name: String
         + toString(): String
@@ -136,8 +135,7 @@ class CrimeBean {
         + setId(int id): void
         + getName(): String
         + setName(String name): void
-}
-        class OutcomeStatus {
+        + class OutcomeStatus 
         - category: String
         - date: String
         + toString(): String
@@ -145,7 +143,6 @@ class CrimeBean {
         + setCategory(String category): void
         + getDate(): String
         + setDate(String date): void
-}
 }
     class CrimeBeanMapper() {
         + map(CrimeBean bean): Crime
