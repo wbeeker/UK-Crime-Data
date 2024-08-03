@@ -1,9 +1,12 @@
+package Model.Formatters;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
+import Model.Crime;
 
 import java.io.*;
 import java.util.List;
