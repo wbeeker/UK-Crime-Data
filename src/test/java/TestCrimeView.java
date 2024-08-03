@@ -1,18 +1,15 @@
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertEquals;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JTextArea;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import View.CrimeView;
 
 public class TestCrimeView {
 
     private CrimeView view;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         view = new CrimeView();
     }
