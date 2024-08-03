@@ -210,9 +210,7 @@ public class CrimeController {
             if (!crimeSearchClicked) {
                 return;
             }
-
             view.getStats().setText("");
-
             String selectedCategory = (String) view.getCategories().getSelectedItem();
             List<Crime> crimes = NetUtils.getURLContents();
             int count = 0;
