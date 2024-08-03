@@ -90,7 +90,7 @@ classDiagram
         + equals(Object o): boolean
         + hashCode(): int
     }
-class CrimeBean {
+    class CrimeBean {
         - category: String
         - location_type: String
         - location: Location
@@ -144,7 +144,7 @@ class CrimeBean {
         + getDate(): String
         + setDate(String date): void
 }
-    class CrimeBeanMapper() {
+    class CrimeBeanMapper {
         + map(CrimeBean bean): Crime
 }
     class CrimeXmlWrapper {
