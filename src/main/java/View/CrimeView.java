@@ -234,5 +234,5 @@ public class CrimeView extends JFrame {
     public JScrollPane getMapPane() {
         return mapPane;
     }
- 
+      
 }
