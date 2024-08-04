@@ -26,7 +26,12 @@ The app will read in the JSON-formatted data from the UK police data API, put th
 
 Users will also be able to create their own sub-lists and write them out in various file formats. 
 
+FINAL UML
+
 ```mermaid
+---
+FINAL UML
+---
 classDiagram
     class CrimeView {
         - panel: JPanel
@@ -199,16 +204,13 @@ classDiagram
         + read(String filePath): List~Crime~
 }
     class FileWriterFormatter {
-        
-
+        - prettyPrint(Collection~Crime~ crimes, OutputStream out): void
+        + prettySingle(Crime crime, PrintStream out): void
+        + writeXmlData(Collection~Crime~ crimes, OutputStream out): void
+        + writeJsonData(Collection~Crime~ crimes, OutputStream out): void
+        + writeCSVData(Collection~Crime~ crimes, OutputStream out): void
+        + write(Collection~Crime~ crimes, Formats format, OutputStream out): void
 }
-    class FileWriter {
-        - writeCSVList(Collection~Crime~, OutputStream out): void
-        - writeXMLList(Collection~Crime~, OutputStream out): void
-        - writeJSONList(Collection~Crime~, OutputStream out): void
-        - writePrettyList(Collection~Crime~, OutputStream out): void
-        + writeOutFiles(Collection~Crime~, Formats format, OutputStream out): void
-    }
     class Formats {
     <<enumerator>>
     JSON, XML, CSV, PRETTY
@@ -229,10 +231,110 @@ classDiagram
     Main --> CrimeController : creates
     CrimeController --> CrimeView : uses
     CrimeController --> CrimeManager : uses
-    NetUtils --> JSONMapper : converts URL contents to Crime objects
-    Crime -- JSONMapper
+    NetUtils --> CrimeManager : creates list of Crimes
+    NetUtils --> CrimeBean : uses
+    NetUtils --> CrimeBeanMapper : uses
+    NetUtils --> Crime : uses
     Crime --> CrimeManager
     CrimeManager --> CrimeView
     CrimeManager --> CrimeView
+    CrimeController --> FileWriterFormatter : uses
+    FileWriterFormatter --> CrimeXmlWrapper : uses
 
+```
+
+INITIAL UML DIAGRAM
+
+```mermaid
+---
+BEFORE UML
+---
+classDiagram
+    class SearchBox {
+        +String query
+        +search()
+    }
+    class MapView {
+        +Double latitude
+        +Double longitude
+        +viewResults()
+    }
+    class CrimeDetails {
+        +String crimeType
+        +String location
+        +Date date
+        +String outcomeStatus
+        +displayDetails()
+    }
+    class StatisticsPanel {
+        +Int totalCrimes
+        +String mostCommonCrime
+        +Double crimeRateChange
+        +displayStatistics()
+    }
+    class CrimeTimeline {
+        +Date[] crimeDates
+        +displayTimeline()
+    }
+    class LocationDetails {
+        +String streetName
+        +String neighborhood
+        +displayDetails()
+    }
+    class NetUtils {
+        + getURLContents(String urlStr: InputStream)
+    }
+    class Crime {
+        - category: String
+        - locationType: String
+        - latitude: float
+        - streetID: int
+        - streetName: String
+        - longitude: float
+        - outcomeStatusCategory: String
+        - outcomeStatusDate: String
+        - persistentID: String
+        - id: int
+        - month: String
+    }
+    class JSONMapper {
+        + writeJSONFile(InputStream contents): List~Crime~
+    }
+    class FileWriter {
+        - writeCSVList(Collection~Crime~, OutputStream out): void
+        - writeXMLList(Collection~Crime~, OutputStream out): void
+        - writeJSONList(Collection~Crime~, OutputStream out): void
+        - writePrettyList(Collection~Crime~, OutputStream out): void
+        + writeOutFiles(Collection~Crime~, Formats format, OutputStream out): void
+    }
+    class Formats {
+    <<enumerator>>
+    JSON, XML, CSV, PRETTY
+    }
+    class CrimeList {
+        + CrimeList()
+        + getCrimes() : List~String~
+        + clear() : void
+        + count() : int
+        + addToList(String str, Stream~List~ sorted) : void
+        + removeFromList(String str) : void
+    }
+    class CrimeSort {
+        -Set~Crime~ crimes
+        +CrimeList(Set~Crime~ crimes)
+        -sortByName(Stream~Crime~ crime) : Stream~Crime~
+        -sortByDate(Stream~Crime~ crime) : Stream~BoardGame~
+        -sortStream(Stream~Crime~ crime, Crime sortOn, boolean ascending) : Stream~Crime~
+    }
+    SearchBox --> MapView : provides search query
+    MapView --> CrimeDetails : selects crime
+    MapView --> StatisticsPanel : provides crime data
+    MapView --> CrimeTimeline : provides crime data
+    MapView --> LocationDetails : selects location
+    NetUtils --> JSONMapper : converts URL contents to Crime objects
+    Crime -- JSONMapper
+    Crime --> CrimeList
+    CrimeList -- CrimeSort
+    CrimeList --> MapView
+    CrimeSort --> MapView
 ```
