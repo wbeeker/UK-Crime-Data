@@ -199,8 +199,12 @@ classDiagram
         + read(String filePath): List~Crime~
 }
     class FileWriterFormatter {
-        
-
+        - prettyPrint(Collection~Crime~ crimes, OutputStream out): void
+        + prettySingle(Crime crime, PrintStream out): void
+        + writeXmlData(Collection~Crime~ crimes, OutputStream out): void
+        + writeJsonData(Collection~Crime~ crimes, OutputStream out): void
+        + writeCSVData(Collection~Crime~ crimes, OutputStream out): void
+        + write(Collection~Crime~ crimes, Formats format, OutputStream out): void
 }
     class FileWriter {
         - writeCSVList(Collection~Crime~, OutputStream out): void
