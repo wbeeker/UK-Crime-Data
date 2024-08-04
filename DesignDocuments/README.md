@@ -240,6 +240,9 @@ classDiagram
     FileWriterFormatter --> CrimeXmlWrapper : uses
 
 ```
+
+INITIAL UML DIAGRAM
+
 ```mermaid
 ---
 BEFORE UML
