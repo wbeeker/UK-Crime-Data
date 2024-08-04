@@ -35,6 +35,7 @@ public class CrimeController {
     private CrimeManager model;
     private List<Crime> addedCrimes = new ArrayList<>();
     private boolean crimeSearchClicked = false;
+    
 
     /**
      * Constructor
@@ -240,7 +241,7 @@ public class CrimeController {
             if (!crimeSearchClicked) {
                 return;
             }
-            crimeSearchClicked = false;    
+            crimeSearchClicked = false;
             view.getStats().setText("");
             String selectedCategory = (String) view.getCategories().getSelectedItem();
             List<Crime> crimes = NetUtils.getURLContents();
@@ -277,6 +278,7 @@ public class CrimeController {
                 }
             }
             view.getStats().setText(output);
+            crimeSearchClicked = true;
         }
     }
 
@@ -303,6 +305,7 @@ public class CrimeController {
         public void actionPerformed(ActionEvent e) {
             // Save crimes to a file using CrimeManager
             model.saveCrimesToFile("crimes.txt");
+
             // Format and save crimes using FileWriterFormatter
             try (FileOutputStream output = new FileOutputStream("crimes.xml")) {
                 List<Crime> crimesToSave;

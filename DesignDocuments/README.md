@@ -28,36 +28,76 @@ Users will also be able to create their own sub-lists and write them out in vari
 
 ```mermaid
 classDiagram
-    class SearchBox {
-        +String query
-        +search()
+    class CrimeView {
+        - panel: JPanel
+        - categories: JComboBox<String>
+        - crimeButton: JButton
+        - addCrimeButton: JButton
+        - mapButton: JButton
+        - statsButton: JButton
+        - clearListButton: JButton
+        - saveButton: JButton
+        - exitButton: JButton
+        - topPanel: JPanel
+        - buttonPanel: JPanel
+        - eastPanel: JPanel
+        - mapPane: JScrollPane
+        - infoPane: JScrollPane
+        - statsPane: JScrollPane
+        - listOfCrimesPane: JScrollPane
+        - info: JTextArea
+        - stats: JTextArea
+        - listOfCrimes: JTextArea
+
+        + CrimeView()
+        + getCategories(): JComboBox<String>
+        + getCrimeButton(): JButton
+        + getAddCrimeButton(): JButton
+        + getMapButton(): JButton
+        + getStatsButton(): JButton
+        + getClearListButton(): JButton
+        + getSaveButton(): JButton
+        + getExitButton(): JButton
+        + getInfo(): JTextArea
+        + getStats(): JTextArea
+        + getListOfCrimes(): JTextArea
+        + getMapPane(): JScrollPane
     }
-    class MapView {
-        +Double latitude
-        +Double longitude
-        +viewResults()
-    }
-    class CrimeDetails {
-        +String crimeType
-        +String location
-        +Date date
-        +String outcomeStatus
-        +displayDetails()
-    }
-    class StatisticsPanel {
-        +Int totalCrimes
-        +String mostCommonCrime
-        +Double crimeRateChange
-        +displayStatistics()
-    }
-    class CrimeTimeline {
-        +Date[] crimeDates
-        +displayTimeline()
-    }
-    class LocationDetails {
-        +String streetName
-        +String neighborhood
-        +displayDetails()
+    class CrimeController {
+        - view: CrimeView
+        - model: CrimeManager
+        - addedCrimes: List<Crime>
+        - crimeSearchClicked: boolean
+        + CrimeController(view: CrimeView, model: CrimeManager)
+        + initializeCategories(): void
+        + initializeMap(): void
+        + createMapImage(imageUrl: String): void
+        + getMarkersForCategory(category: String): String
+        }
+        class crimeSearchListener {
+            + actionPerformed(e: ActionEvent): void
+        }
+        class mapListener {
+            + actionPerformed(e: ActionEvent): void
+            + getMarkersForCategory(category: String): String
+        }
+        class addCrimeListener {
+            + actionPerformed(e: ActionEvent): void
+        }
+        class statsListener {
+            + actionPerformed(e: ActionEvent): void
+        }
+        class clearListListener {
+            + actionPerformed(e: ActionEvent): void
+        }
+        class saveCrimeListener {
+            + actionPerformed(e: ActionEvent): void
+        }
+        class exitListener {
+            + actionPerformed(e: ActionEvent): void
+        }
+    class Main {
+        + main(args: String[]): void
     }
     class NetUtils {
         + getURLContents(String urlStr: InputStream)
@@ -184,15 +224,15 @@ classDiagram
         + saveCrimesToFile(String filename), : void
     }
     
-    SearchBox --> MapView : provides search query
-    MapView --> CrimeDetails : selects crime
-    MapView --> StatisticsPanel : provides crime data
-    MapView --> CrimeTimeline : provides crime data
-    MapView --> LocationDetails : selects location
+    Main --> CrimeView : creates
+    Main --> CrimeManager : creates
+    Main --> CrimeController : creates
+    CrimeController --> CrimeView : uses
+    CrimeController --> CrimeManager : uses
     NetUtils --> JSONMapper : converts URL contents to Crime objects
     Crime -- JSONMapper
     Crime --> CrimeManager
-    CrimeManager --> MapView
-    CrimeManager --> MapView
+    CrimeManager --> CrimeView
+    CrimeManager --> CrimeView
 
 ```
