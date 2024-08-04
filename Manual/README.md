@@ -35,3 +35,6 @@ When 'Add Crime' button is clicked the 'Crimes Added to List' section will displ
 
 You can then click the 'Save Crime' button and the current crimes added to the list will be saved to an xml file. (crimes.xml)
 ![save](imgs/8.png)
+
+XML file created upon Saving:
+![xml file](imgs/9.png)
