@@ -2,6 +2,8 @@
 
 You will update this manual and add any files here that you need for an 'application' manual for your program. Make sure to include screenshots of various features. 
 
+
+The API represents crimes in Leicester UK in the month of January in 2023.
 API: 
 https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2023-01
 
@@ -24,10 +26,10 @@ Once a crime is selected and you click the 'Crime Search' buttton, all of the cr
 Next you have the opportunity to select 'Add Crime', 'Show Crime Locations', or 'Populate Crime' Stats:
 ![button options](imgs/4.png)
 
-When 'Show Crime Locations' button is clicked the map will poplate with markers showing the selected crimes locations.
+When 'Show Crime Locations' button is clicked the map will populate with markers showing the selected crimes locations.
 ![map markers](imgs/5.png)
 
-When 'Populate Crime Stats' button is clicked the 'Crime Stats' section with be populated with crime stats. (Number of crimes, number of crimes per street if > 1)
+When 'Populate Crime Stats' button is clicked the 'Crime Stats' section with be populated with crime stats. (Includes total number of crimes and number of crimes per street if > 1)
 ![stats](imgs/6.png)
 
 When 'Add Crime' button is clicked the 'Crimes Added to List' section will display the current category:
@@ -38,3 +40,9 @@ You can then click the 'Save Crime' button and the current crimes added to the l
 
 XML file created upon Saving:
 ![xml file](imgs/9.png)
+
+You have the ability to add multiple crimes to the list and save out the multiple crimes to the file.
+![add multiple crimes](imgs/10.png)
+
+You can also search 'all crimes' to view all of the crimes and save all the crimes to the file:
+![all crimes](imgs/11.png)
