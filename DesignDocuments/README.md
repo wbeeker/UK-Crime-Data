@@ -241,5 +241,6 @@ classDiagram
     CrimeManager --> CrimeView
     CrimeManager --> CrimeView
     CrimeController --> FileWriterFormatter : uses
+    FileWriterFormatter --> CrimeXmlWrapper : uses
 
 ```
