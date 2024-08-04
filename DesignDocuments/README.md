@@ -206,13 +206,6 @@ classDiagram
         + writeCSVData(Collection~Crime~ crimes, OutputStream out): void
         + write(Collection~Crime~ crimes, Formats format, OutputStream out): void
 }
-    class FileWriter {
-        - writeCSVList(Collection~Crime~, OutputStream out): void
-        - writeXMLList(Collection~Crime~, OutputStream out): void
-        - writeJSONList(Collection~Crime~, OutputStream out): void
-        - writePrettyList(Collection~Crime~, OutputStream out): void
-        + writeOutFiles(Collection~Crime~, Formats format, OutputStream out): void
-    }
     class Formats {
     <<enumerator>>
     JSON, XML, CSV, PRETTY
