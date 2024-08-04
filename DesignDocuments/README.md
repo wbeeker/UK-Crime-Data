@@ -233,8 +233,10 @@ classDiagram
     Main --> CrimeController : creates
     CrimeController --> CrimeView : uses
     CrimeController --> CrimeManager : uses
-    NetUtils --> JSONMapper : converts URL contents to Crime objects
-    Crime -- JSONMapper
+    NetUtils --> CrimeManager : creates list of Crimes
+    NetUtils --> CrimeBean : uses
+    NetUtils --> CrimeBeanMapper : uses
+    NetUtils --> Crime : uses
     Crime --> CrimeManager
     CrimeManager --> CrimeView
     CrimeManager --> CrimeView
