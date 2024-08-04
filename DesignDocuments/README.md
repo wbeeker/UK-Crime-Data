@@ -149,7 +149,7 @@ classDiagram
 }
     class CrimeXmlWrapper {
         - crime: Collection~Crime~
-        + CrimeXmlWrapper(Collection ~crimes~
+        + CrimeXmlWrapper(Collection ~crimes~)
 }
     class FileReaderFormatter {
         + loadfile(String filePath): InputStream

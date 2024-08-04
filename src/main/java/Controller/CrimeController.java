@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,9 +21,9 @@ import javax.swing.JPanel;
 import Model.Crime;
 import Model.CrimeManager;
 import Model.Formatters.FileWriterFormatter;
+import Model.Formatters.Formats;
 import Model.Net.NetUtils;
 import View.CrimeView;
-import Model.Formatters.Formats;
 
 /**
  * CrimeController class
@@ -51,7 +52,7 @@ public class CrimeController {
         view.getStatsButton().addActionListener(new statsListener());
         view.getClearListButton().addActionListener(new clearListListener());
         view.getSaveButton().addActionListener(new saveCrimeListener());
-        view.getExitButton().addActionListener(new ExitListener());
+        view.getExitButton().addActionListener(new exitListener());
 
         // Initialize categories and data
         initializeCategories();
@@ -69,6 +70,7 @@ public class CrimeController {
         }
         List<Crime> sortedCrimes = model.getCrimes();
         List<String> categoryList = new ArrayList<>();
+        categoryList.add("all crimes");
         for (Crime crime : sortedCrimes) {
             if (!categoryList.contains(crime.getCategory())) {
                 categoryList.add(crime.getCategory());
@@ -126,43 +128,22 @@ public class CrimeController {
      * Listens for the crime search button click and updates the view with the search results.
      */
     private class crimeSearchListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String selectedCategory = (String) view.getCategories().getSelectedItem();
-            List<Crime> crimes = NetUtils.getURLContents();
-            String output = "";
-            for (Crime crime : crimes) {
-                if (crime.getCategory().equals(selectedCategory)) {
-                    output += crime.getInfo() + "\n";
-                }
-            }
-            view.getInfo().setText(output);
-            crimeSearchClicked = true;
-            initializeMap(); // Update map with the selected category
-            view.getStats().setText(""); // Clear stats
-        }
-    }
-
-    /**
-     * Add crime listener
-     * Listens for the add crime button click and adds the selected crime to the list.
-     */
-    private class addCrimeListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (crimeSearchClicked) {
-                String selectedCategory = (String) view.getCategories().getSelectedItem();
-                view.getListOfCrimes().append(selectedCategory + "\n");
-                List<Crime> crimes = NetUtils.getURLContents();
-                for (Crime crime : crimes) {
-                    if (crime.getCategory().equals(selectedCategory)) {
-                        addedCrimes.add(crime);
-                    }
-                }
-                crimeSearchClicked = true;
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String selectedCategory = (String) view.getCategories().getSelectedItem();
+        List<Crime> crimes = NetUtils.getURLContents();
+        String output = "";
+        for (Crime crime : crimes) {
+            if (selectedCategory.equals("all crimes") || crime.getCategory().equals(selectedCategory)) {
+                output += crime.getInfo() + "\n";
             }
         }
+        view.getInfo().setText(output);
+        crimeSearchClicked = true;
+        initializeMap();
+        view.getStats().setText("");
     }
+}
 
     /**
      * Map listener
@@ -194,9 +175,9 @@ public class CrimeController {
             String markers = "";
             int maxMarkers = 400;
             int markerCount = 0;
-
+        
             for (Crime crime : crimes) {
-                if (crime.getCategory().equals(category)) {
+                if (category.equals("all crimes") || crime.getCategory().equals(category)) {
                     markers += "&markers=color:red%7C" + crime.getLocationLatitude() + "," + crime.getLocationLongitude();
                     markerCount++;
                     if (markerCount >= maxMarkers) {
@@ -204,7 +185,48 @@ public class CrimeController {
                     }
                 }
             }
+            if (category.equals("all crimes") || category.equals("violent-crime")) {
+                System.out.println("Displaying first 400 crimes.");
+            }
             return markers;
+        }
+    }
+
+    /**
+     * Add crime listener
+     * Listens for the add crime button click and adds the selected crime to the list.
+     */
+    private class addCrimeListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (crimeSearchClicked) {
+                String selectedCategory = (String) view.getCategories().getSelectedItem();
+                String currentText = view.getListOfCrimes().getText();
+                
+                if (currentText.contains("all crimes")) {
+                    return;
+                }
+                if (!currentText.contains(selectedCategory)) {
+                    view.getListOfCrimes().append(selectedCategory + "\n");
+                }
+                List<Crime> crimes = NetUtils.getURLContents();
+                List<Crime> specificCrimes = new ArrayList<>();
+
+                if (selectedCategory.equals("all crimes")) {
+                    view.getListOfCrimes().setText("all crimes\n");
+                    addedCrimes.clear();
+                    addedCrimes.addAll(crimes);
+                } else {
+                    for (Crime crime : crimes) {
+                        if (crime.getCategory().equals(selectedCategory) && !addedCrimes.contains(crime)) {
+                            specificCrimes.add(crime);
+                            addedCrimes.add(crime);
+                        }
+                    }
+                    model.addSpecificCrimes(specificCrimes);
+                }
+                crimeSearchClicked = true;
+            }
         }
     }
 
@@ -218,25 +240,40 @@ public class CrimeController {
             if (!crimeSearchClicked) {
                 return;
             }
+            crimeSearchClicked = false;    
             view.getStats().setText("");
             String selectedCategory = (String) view.getCategories().getSelectedItem();
             List<Crime> crimes = NetUtils.getURLContents();
             int count = 0;
             Map<String, Integer> streetCounts = new HashMap<>();
+            Map<String, Integer> categoryCounts = new HashMap<>();
+    
             for (Crime crime : crimes) {
-                if (crime.getCategory().equals(selectedCategory)) {
+                if (selectedCategory.equalsIgnoreCase("all crimes") || crime.getCategory().equals(selectedCategory)) {
                     count++;
                     String streetName = crime.getStreetName();
                     if (streetName != null) {
                         streetCounts.put(streetName, streetCounts.getOrDefault(streetName, 0) + 1);
                     }
+                    categoryCounts.put(crime.getCategory(), categoryCounts.getOrDefault(crime.getCategory(), 0) + 1);
                 }
             }
             String output = "Number of " + selectedCategory + " crimes: " + count;
+            if (selectedCategory.equalsIgnoreCase("all crimes")) {
+                output = "Total number of crimes: " + count;
+                output += "\n\nCrimes by category:\n";
+                List<String> sortedCategories = new ArrayList<>(categoryCounts.keySet());
+                Collections.sort(sortedCategories);
+                for (String category : sortedCategories) {
+                    output += "\n" + category + ": " + categoryCounts.get(category);
+                }
+            }
             output += "\n\nStreets with multiple crimes:\n";
-            for (Map.Entry<String, Integer> entry : streetCounts.entrySet()) {
-                if (entry.getValue() > 1) {
-                    output += "\n" + entry.getKey() + ": " + entry.getValue();
+            List<String> sortedStreets = new ArrayList<>(streetCounts.keySet());
+            Collections.sort(sortedStreets);
+            for (String street : sortedStreets) {
+                if (streetCounts.get(street) > 1) {
+                    output += "\n" + street + ": " + streetCounts.get(street);
                 }
             }
             view.getStats().setText(output);
@@ -252,8 +289,10 @@ public class CrimeController {
         public void actionPerformed(ActionEvent e) {
             view.getListOfCrimes().setText("");
             model.clearCrimes();
+            addedCrimes.clear(); // Clear the added crimes list
         }
     }
+
 
     /**
      * Save crime listener
@@ -262,15 +301,33 @@ public class CrimeController {
     private class saveCrimeListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            // Save crimes to a file using CrimeManager
+            model.saveCrimesToFile("crimes.txt");
+            // Format and save crimes using FileWriterFormatter
             try (FileOutputStream output = new FileOutputStream("crimes.xml")) {
-                FileWriterFormatter.write(addedCrimes, Formats.PRETTY, output);
+                List<Crime> crimesToSave;
+                if (view.getCategories().getSelectedItem().equals("all crimes")) {
+                    crimesToSave = model.getCrimes();
+                    for (Crime crime : crimesToSave) {
+                        model.addCrime(crime);
+                    }
+                } else {
+                    crimesToSave = new ArrayList<>(addedCrimes);
+                    model.addSpecificCrimes(crimesToSave);
+                }
+                crimesToSave.sort(Comparator.comparing(Crime::getCategory));
+                FileWriterFormatter.write(crimesToSave, Formats.PRETTY, output);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
     }
 
-    private class ExitListener implements ActionListener {
+    /**
+     * Exit listener
+     * Listens for the exit button click and exits the application.
+     */
+    private class exitListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
            System.exit(0);
