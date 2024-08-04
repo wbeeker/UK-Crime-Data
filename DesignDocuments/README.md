@@ -26,6 +26,8 @@ The app will read in the JSON-formatted data from the UK police data API, put th
 
 Users will also be able to create their own sub-lists and write them out in various file formats. 
 
+FINAL UML
+
 ```mermaid
 ---
 FINAL UML
