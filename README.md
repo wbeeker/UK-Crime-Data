@@ -1,5 +1,7 @@
 # Final Project for CS 5004 - Crime: UK Police Data
 
+
+
 (remove this and add your sections/elements)
 This readme should contain the following information: 
 
@@ -10,9 +12,16 @@ This readme should contain the following information:
 
 Ask yourself, if you started here in the readme, would you have what you need to work on this project and/or use the application?
 
+Group members:
 Emily Despres
 
+
+
+Link to design document maunal:
 https://github.com/Su24-CS5004-Online-Lionelle/final-project-group-7/blob/main/Manual/README.md
+
+
+Instructions:
 
 When the program is run, the GUI displays a crime category dropdown and ‘Crime Search’ button at the top, a ‘Crime Info’ pane on the left, ‘Crime Stats’ and ‘Crimes Added to List’ sections on the right, a map of Leicester, UK in the center, and various interactive buttons at the bottom.
 
