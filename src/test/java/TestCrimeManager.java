@@ -1,16 +1,23 @@
-package test;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.Arrays;
-import java.util.List;
+import Model.Crime;
+import Model.Formatters.FileWriterFormatter;
+import Model.Formatters.Formats;
+import Model.CrimeManager;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays; // Importing the Arrays class to resolve the Arrays.asList method
+import java.io.File;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 /**
  * Unit tests for the CrimeManager class.
  */
-public class CrimeManagerTest {
+public class TestCrimeManager {
     private CrimeManager crimeManager;
     private Crime crime1;
     private Crime crime2;
