@@ -1,4 +1,4 @@
-# Final Project for CS 5004 - (APPLICATION NAME/Update)
+# Final Project for CS 5004 - Crime: UK Police Data
 
 (remove this and add your sections/elements)
 This readme should contain the following information: 
