@@ -4,7 +4,7 @@ You may have multiple design documents for this project. Place them all in this 
 
 OVERVIEW
 
-Our app will take UK crime data and display it on an interactive map using the longitude and latitude associated with each crime report. The data comes from crimes committed in January 2023 in Leicester, England. It includes the following categories of crimes: 
+Our app takes UK crime data and displays it on an map using the longitude and latitude associated with each crime report. The data comes from crimes committed in January 2023 in Leicester, England. It includes the following categories of crimes: 
 
     anti-social behaviour
     bicycle-theft
@@ -22,9 +22,9 @@ Our app will take UK crime data and display it on an interactive map using the l
 
 A typical crime report inludes data like the category of crime, the longitude and latitude of where it was committed, an ID number, the month the crime was committed, and an outcome status if the case has been resolved. 
 
-The app will read in the JSON-formatted data from the UK police data API, put the data into a list that can be sorted by category, and then displayed on a map using the latitude and longitude points included with each crime report. 
+The app reads in the JSON-formatted data from the UK police data API, puts the data into a list that can be sorted by crime type, and then displayed on a map using the latitude and longitude points included with each crime report. 
 
-Users will also be able to create their own sub-lists and write them out in various file formats. 
+Users will also be able to create their own sub-lists and save them. 
 
 FINAL UML
 
@@ -195,13 +195,6 @@ classDiagram
     class CrimeXmlWrapper {
         - crime: Collection~Crime~
         + CrimeXmlWrapper(Collection ~crimes~)
-}
-    class FileReaderFormatter {
-        + loadfile(String filePath): InputStream
-        + readXmlInput(InputStream in): List~Crime~
-        + readJsonInput(InputStream in): List~Crime~
-        + readCsvInput(InputStream in): List~Crime~
-        + read(String filePath): List~Crime~
 }
     class FileWriterFormatter {
         - prettyPrint(Collection~Crime~ crimes, OutputStream out): void
