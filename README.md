@@ -20,6 +20,7 @@ Emily Despres - https://github.com/zembug
 
 Will Beeker - https://github.com/wbeeker
 
+Jaime Espinola - https://github.com/jaimeeespinola
 
 
 Link to manual:
