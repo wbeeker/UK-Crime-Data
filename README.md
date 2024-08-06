@@ -18,6 +18,8 @@ Group members and githubs:
 
 Emily Despres - https://github.com/zembug
 
+Will Beeker - https://github.com/wbeeker
+
 
 
 Link to manual:
