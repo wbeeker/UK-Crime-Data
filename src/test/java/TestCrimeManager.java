@@ -1,11 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import Model.Crime;
-import Model.Formatters.FileWriterFormatter;
-import Model.Formatters.Formats;
 import Model.CrimeManager;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays; // Importing the Arrays class to resolve the Arrays.asList method
 import java.io.File;
