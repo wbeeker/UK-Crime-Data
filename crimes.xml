@@ -1,196 +1,36 @@
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.635647
-           longitude: -1.137293
+           latitude: 52.630623
+           longitude: -1.113087
        STREET: 
-           id: 1738106
-           name: On or near Shires Lane
+           id: 1739386
+           name: On or near Twycross Street
+        OUTCOME_STATUS: 
+           category: Status update unavailable
+           date: 2023-05
+
+        persistent_id: 7feeda158e9e121c7ff52ddb0b0c55acbf6e5242014deecd2aa1912b525447a8
+        id: 107767772
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.625820
+           longitude: -1.140899
+       STREET: 
+           id: 1737867
+           name: On or near Windermere Street
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
-           date: 2023-03
+           date: 2023-05
 
-        persistent_id: bd83bda6a9395c8c8996de4723211cfd0b7a587ef8938f5063e0be7c4b2d93c9
-        id: 107765858
+        persistent_id: ae84890f4c310d1b2874f80d35802d6bde72ba0b79db7e0b60ab9c9d1a2a6014
+        id: 107764166
         month: 2023-01
 
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.618158
-           longitude: -1.135525
-       STREET: 
-           id: 1738119
-           name: On or near Putney Road West
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: ab2f654faf0c01961c3c89de0614f87964942219359dd3b3e002d9baafdaaede
-        id: 107766867
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.633317
-           longitude: -1.127203
-       STREET: 
-           id: 1738721
-           name: On or near Church Street
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 1264635b30eb55253ab14e56924963213aa212c7866cf3e661af505276d50ed8
-        id: 107768195
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.635555
-           longitude: -1.129626
-       STREET: 
-           id: 1738528
-           name: On or near Yeoman Lane
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-02
-
-        persistent_id: b6316f847d5dac09fbf8e25035b79b74d115c396096af97dd595503021032c60
-        id: 107765771
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.629294
-           longitude: -1.137684
-       STREET: 
-           id: 1738026
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-02
-
-        persistent_id: 01f24fd8bc70ece72038e51ff271bb7087b419980b65f94d2c1f6ae2a98c61b3
-        id: 107769256
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.639558
-           longitude: -1.132473
-       STREET: 
-           id: 1738364
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-02
-
-        persistent_id: 49499e275540a4b59c215a691cac5d7bd4b8742dd94bce47e5a3aca201a59bef
-        id: 107769022
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.643191
-           longitude: -1.128869
-       STREET: 
-           id: 1738592
-           name: On or near Memory Lane
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 29795994e17a247dd6eb785029594c1caad036ebb3d603adf13e0b8ac885d24e
-        id: 107765298
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.642383
-           longitude: -1.129032
-       STREET: 
-           id: 1738585
-           name: On or near Foundry Square
-        OUTCOME_STATUS: 
-           category: Local resolution
-           date: 2023-04
-
-        persistent_id: 77e66f6903b9e80e64a8f3fa52eb03d04233db9a655cc44faab3e09d28a63a17
-        id: 107762666
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.637581
-           longitude: -1.133709
-       STREET: 
-           id: 1738327
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: be0af8d66e59210c4412faa04c5a371e90cbf31d594d6d4dbf41566dd0c150a7
-        id: 107762679
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.617006
-           longitude: -1.120777
-       STREET: 
-           id: 1739022
-           name: On or near Hartopp Road
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 35dcaad90535af5d0d4d60e75ccad2e05996144db0e42a4fe14e642f55293ea9
-        id: 107762676
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.629294
-           longitude: -1.137684
-       STREET: 
-           id: 1738026
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: f6c4c6225d0dd5d311b3827747f05ab41181c8994ffe6104f42a6c78ab8b7fd3
-        id: 107769181
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.629294
-           longitude: -1.137684
-       STREET: 
-           id: 1738026
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-03
-
-        persistent_id: 1315cce4628daad784a357b0cd1ac29150dce9befb74734c735e5796447dbe9f
-        id: 107768687
-        month: 2023-01
-
-bicycle theft
+burglary
 
        LOCATION: 
            latitude: 52.632052
@@ -200,205 +40,493 @@ bicycle theft
            name: On or near 
         OUTCOME_STATUS: 
            category: Unable to prosecute suspect
-           date: 2023-03
+           date: 2023-02
 
-        persistent_id: cfd0e674c8b290411a8ce5bd3c168d7123c9f961c44a373607bf86307b0a42b9
-        id: 107767047
+        persistent_id: 49f190f4ba66032d1306c99568e0aff5cc89cce688beeb3cd3410530fe9b0c84
+        id: 107769527
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.640046
-           longitude: -1.132433
+           latitude: 52.637697
+           longitude: -1.137297
        STREET: 
-           id: 1738382
+           id: 1738064
+           name: On or near Causeway Lane
+        OUTCOME_STATUS: 
+           category: Court result unavailable
+           date: 2023-07
+
+        persistent_id: 0b150ec55ea80b8924411f8d94b711c26d05688ed17a9dfef0474573d0f5adab
+        id: 107767523
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.625614
+           longitude: -1.111770
+       STREET: 
+           id: 1739425
+           name: On or near Beckingham Road
+        OUTCOME_STATUS: 
+           category: Court result unavailable
+           date: 2023-07
+
+        persistent_id: 006d99d8aebf8d1013bf9ada04f6b373de97be764316b3988431094438520d0c
+        id: 107767548
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.639052
+           longitude: -1.138290
+       STREET: 
+           id: 1738044
+           name: On or near Burgess Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: aef424e6a06a58e5459276aedd4ef1b518c6b0be2b6a0d1e10ec67e98b50f674
+        id: 107766541
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.634252
+           longitude: -1.130997
+       STREET: 
+           id: 1738481
+           name: On or near Granby Place
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 0ac2ab8acac32ce6086f3f9feb75639b6fced59139d52a184ae5cf5ffd1c1591
+        id: 107767918
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.627455
+           longitude: -1.118736
+       STREET: 
+           id: 1739118
+           name: On or near Mill Hill Lane
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-05
+
+        persistent_id: f25e5b8439ee9051fecd732b9021f624cb3b71fae819bf0926a0078a6648880d
+        id: 107769954
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.625255
+           longitude: -1.114156
+       STREET: 
+           id: 1739323
+           name: On or near St James Road
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 37096b725055bf85b3e481c1d59c2941ab5452c7372269bb882227edce270d6b
+        id: 107763410
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.628911
+           longitude: -1.122297
+       STREET: 
+           id: 1738970
+           name: On or near College Walk
+        OUTCOME_STATUS: 
+           category: Unable to prosecute suspect
+           date: 2023-02
+
+        persistent_id: 9dd2d8de3c2c5d73160053d24b9ee3029a47a90f21547d669bec586a8ef7f0a4
+        id: 107765811
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.624788
+           longitude: -1.149857
+       STREET: 
+           id: 1737410
+           name: On or near Noel Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-02
+
+        persistent_id: 6f916645f763211f76540df23032c79bf84b5e6e6b0b04af001111be4723ebf1
+        id: 107763616
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.630568
+           longitude: -1.154872
+       STREET: 
+           id: 1737160
+           name: On or near Cherryleas Drive
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: aae34451f26adbc00005cee0784cb34e1cf364b0c56ad159d1c1a7732f7ca49c
+        id: 107766570
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.631769
+           longitude: -1.117334
+       STREET: 
+           id: 1739179
+           name: On or near Guthlaxton Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 9b8156af4bf52c7d21d467f593bfc30dd1b18d14a49a15cd7f7aac62e9bc4015
+        id: 107763692
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.630994
+           longitude: -1.154051
+       STREET: 
+           id: 1737181
+           name: On or near Linkway Gardens
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-03
+
+        persistent_id: d533d290fe82e22b32fd0efb82070adf55946bc50143ff565736bc41bce11bed
+        id: 107762782
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.631591
+           longitude: -1.148277
+       STREET: 
+           id: 1737544
+           name: On or near West Holme Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 2603ff976ab9067026760b223ac68691042e7304cb37fd83881a237b018e4cd1
+        id: 107770238
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.636060
+           longitude: -1.120153
+       STREET: 
+           id: 1738987
            name: On or near 
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-02
 
-        persistent_id: 37533cfebafafde87a23f11d3641ca06c20f3cb3b316209a9859ace9c29ab352
-        id: 107766336
+        persistent_id: 0e9ac3e7891fdfbcfea555e4dc6aeda5e01a47becdb7b369079b92c4bcde28d4
+        id: 107767529
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.634136
-           longitude: -1.134752
+           latitude: 52.631769
+           longitude: -1.117334
        STREET: 
-           id: 1738239
-           name: On or near Hotel Street
+           id: 1739179
+           name: On or near Guthlaxton Street
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 1a8cc178c1b84299c8b69291ca28166689a7f50a9da7979024a90b3b4765dbc6
-        id: 107767855
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.632272
-           longitude: -1.145442
-       STREET: 
-           id: 1737640
-           name: On or near New Park Street
-        OUTCOME_STATUS: 
-           category: Unable to prosecute suspect
-           date: 2023-01
-
-        persistent_id: fdcdf377b7cbdee27fbb3af8b90e43be3e17d974d84aa33c3544c6e24b5354c2
-        id: 107763155
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.622945
-           longitude: -1.147396
-       STREET: 
-           id: 1737514
-           name: On or near Helmdon Road
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 2c1e1e9db549a5b0631f17e0cd0662f03db1e2b24c949b8236f35e18264570db
-        id: 107762933
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.625264
-           longitude: -1.140129
-       STREET: 
-           id: 1737915
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-03
-
-        persistent_id: 88033e870f7ccef1947fda9a6bccc41199b703d4bae2f67dcc7c4879c698da1d
-        id: 107769490
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.640513
-           longitude: -1.128966
-       STREET: 
-           id: 1738601
-           name: On or near Gower Street
-        OUTCOME_STATUS: 
-           category: Unable to prosecute suspect
            date: 2023-02
 
-        persistent_id: bc0ab9c9a4f5ce12e15f9372c41bf00680a095f5b69053e7662c263e0d73f33e
-        id: 107766132
+        persistent_id: ffdba8b16ca5280e0cf85f6fae3982e9798745ca4b9bcf1d230a3b145081d6a4
+        id: 107770255
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.618158
-           longitude: -1.135525
+           latitude: 52.637697
+           longitude: -1.137297
        STREET: 
-           id: 1738119
-           name: On or near Putney Road West
+           id: 1738064
+           name: On or near Causeway Lane
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-01
 
-        persistent_id: 221b9d814310d18230c0016ae8f56e38e532a9e70e6707d971668e482629a06b
-        id: 107767290
+        persistent_id: 0282c1f1bc9d4e878443cc87ac78205a2dcdf3a0f53c40ec3bd74e50ac5cb7fc
+        id: 107762823
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.620491
-           longitude: -1.138014
+           latitude: 52.637530
+           longitude: -1.115933
        STREET: 
-           id: 1738051
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 2aef04f5b552740e228a1eb8aaa8819e779da0633e95d19ae059ecd25a4b5a5d
-        id: 107769693
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.636723
-           longitude: -1.140686
-       STREET: 
-           id: 1737812
-           name: On or near Friars Causeway
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: c7bde2f3bfd5cdda325b44f9f18a21e58b919106e5f14251758f2c723e222775
-        id: 107762399
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.630162
-           longitude: -1.140873
-       STREET: 
-           id: 1737864
-           name: On or near Newarke Close
+           id: 1739166
+           name: On or near Upper Charnwood Street
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-03
 
-        persistent_id: 4fab6b97f4ca48f55adb977cac573819a3b811351725176c6f5d650affe00858
-        id: 107769238
+        persistent_id: 54880d49be752971e172e25c3e281b4df4f809a2e035ae4519d413df4c9332b8
+        id: 107769858
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.630574
-           longitude: -1.131985
+           latitude: 52.628923
+           longitude: -1.115441
        STREET: 
-           id: 1738432
-           name: On or near King Street
+           id: 1739238
+           name: On or near Avon Street
+        OUTCOME_STATUS: 
+           category: Unable to prosecute suspect
+           date: 2023-06
+
+        persistent_id: 081f9f9dbe7cd6e94a09ffd782b162b3936cd0db617f66b8654730acb548b048
+        id: 107762393
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.634849
+           longitude: -1.127749
+       STREET: 
+           id: 1738676
+           name: On or near Rutland Street
+        OUTCOME_STATUS: 
+           category: Unable to prosecute suspect
+           date: 2023-01
+
+        persistent_id: 5d5da4a171dcbf5276f11aa2f50617e1297ca5baeb6cdf5d74c7c7c2f56de414
+        id: 107762481
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.633502
+           longitude: -1.131662
+       STREET: 
+           id: 1738435
+           name: On or near Bishop Street
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-01
 
-        persistent_id: d6c7066969446e66da21fe32d4072dbd4e735b25bbbc2edb6cecb64557b7f27e
-        id: 107769573
+        persistent_id: 54108516df1804e9103a08b16d668da721f1e9aa77c5636d9eba537819ba1c4e
+        id: 107768314
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.637101
-           longitude: -1.130778
+           latitude: 52.628462
+           longitude: -1.126029
        STREET: 
-           id: 1738524
+           id: 1738792
+           name: On or near De Montfort Square
+        OUTCOME_STATUS: 
+           category: Court result unavailable
+           date: 2023-07
+
+        persistent_id: c6a2b630e14610b66da537ef65ebc537559f31c2ae177f3d689349d612bc9e2a
+        id: 107762445
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.642024
+           longitude: -1.143892
+       STREET: 
+           id: 1737685
+           name: On or near North Bridge Place
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-05
+
+        persistent_id: 992208bf086e1ea2ec7b75f85df52bcbe3e15319a23857483a7d28605a69cb5c
+        id: 107765987
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.638533
+           longitude: -1.136054
+       STREET: 
+           id: 1738143
+           name: On or near Darker Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 2175b423f3ccc6242df6a81b45a6a6df0845a5ccc4f0cb1f24c53ab5811dcd36
+        id: 107762257
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.630696
+           longitude: -1.148812
+       STREET: 
+           id: 1737486
+           name: On or near Cranmer Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 0ecf1e3418d95ff7c49f2a4db732ba49aeff679dd87386f78e6a0f373376a6d7
+        id: 107762820
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.626147
+           longitude: -1.110829
+       STREET: 
+           id: 1739492
+           name: On or near Evington Road
+        OUTCOME_STATUS: 
+           category: Court result unavailable
+           date: 2023-10
+
+        persistent_id: 582ea8e5e888d7c7a30f246aa3e0527c12c5cf1ea08ae5ed0dcfd3ae67f0871b
+        id: 107768265
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.635706
+           longitude: -1.122072
+       STREET: 
+           id: 1738956
+           name: On or near Samuel Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 2d48f9e4e076ed9d64b6186642c1ef04b3053eb96d76fbea083fd528b7e6cf64
+        id: 107764278
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.627299
+           longitude: -1.148966
+       STREET: 
+           id: 1737468
+           name: On or near Norman Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 6222d281d7f7a9fdb5c94698d55b9e8b8136d6a4ba31c015e35cf5dadc86a1c6
+        id: 107762222
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.632064
+           longitude: -1.150307
+       STREET: 
+           id: 1737371
+           name: On or near Musgrove Close
+        OUTCOME_STATUS: 
+           category: Unable to prosecute suspect
+           date: 2023-11
+
+        persistent_id: f8610ad284c5456fe5cbc60fc39d81cfd22f491d9ee99fbc93012d6ebefb4de5
+        id: 107762964
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.626147
+           longitude: -1.110829
+       STREET: 
+           id: 1739492
+           name: On or near Evington Road
+        OUTCOME_STATUS: 
+           category: Court result unavailable
+           date: 2023-10
+
+        persistent_id: b7a0fe09b696257b39dea3fef57599075ea49efd3ba150bbe01cbd7aaf710b32
+        id: 107769058
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.636824
+           longitude: -1.122567
+       STREET: 
+           id: 1738951
+           name: On or near William Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 948ec0824bad9aa824cc89c4f4e4989e823a1b2de8181802490a7a895697d682
+        id: 107768770
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.636771
+           longitude: -1.123883
+       STREET: 
+           id: 1738860
            name: On or near 
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-01
 
-        persistent_id: 002502500bfbad8992d45b288c9a5a0d1967702496c45130d2db037f34d262b2
-        id: 107769484
+        persistent_id: 871390cb836e8e88c0990bbdb133fabf444a3651f3b0c564b1e0781ff3218be6
+        id: 107762894
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
            latitude: 52.635488
@@ -410,135 +538,183 @@ bicycle theft
            category: Investigation complete; no suspect identified
            date: 2023-01
 
-        persistent_id: c2aa9303fff2df8ccf66a418c28683bf4e0beef3e0385a6ee888dcf931555b4b
-        id: 107769458
+        persistent_id: c5a56871137e8aca5d71ab0cb23b467040436bd4ff1fba559997ffbea3288fba
+        id: 107764693
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.636041
-           longitude: -1.133444
+           latitude: 52.634916
+           longitude: -1.110134
        STREET: 
-           id: 1738351
-           name: On or near East Gates
+           id: 1739535
+           name: On or near Bakewell Street
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
-           date: 2023-01
+           date: 2023-04
 
-        persistent_id: d304030b36d1de4c139010e06c7cf11c4cb63988aff4b39d3496fad88fc5ba1d
-        id: 107769424
+        persistent_id: 48b849019c26890a63de6eaa0440109d6a21ec8fbb0a13ca7e479b3f23787e89
+        id: 107765595
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.618158
-           longitude: -1.135525
+           latitude: 52.635559
+           longitude: -1.131414
        STREET: 
-           id: 1738119
-           name: On or near Putney Road West
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: e11601360529b8ee34be554e6b49c5fb7378f2b13002836f8c3d135b623eb2cf
-        id: 107766631
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.637115
-           longitude: -1.129034
-       STREET: 
-           id: 1738598
-           name: On or near 
-        OUTCOME_STATUS: 
-           category: Court result unavailable
-           date: 2023-07
-
-        persistent_id: f706567aac34777d2fe4732b3e3705f1269f021350afadc4785ff5048cb73bb3
-        id: 107762182
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.632955
-           longitude: -1.140434
-       STREET: 
-           id: 1737814
-           name: On or near Castle Street
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: 5e8a3d4b264abc8fddffb8ebe7c7ff97190898d2bd764848b8b25158e237af51
-        id: 107769242
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.628812
-           longitude: -1.123495
-       STREET: 
-           id: 1738879
-           name: On or near De Montfort Place
-        OUTCOME_STATUS: 
-           category: Investigation complete; no suspect identified
-           date: 2023-01
-
-        persistent_id: c83ae051159c256207ca9eaacc00b803594a68b4dcff00292e3c712edd946722
-        id: 107769727
-        month: 2023-01
-
-bicycle theft
-
-       LOCATION: 
-           latitude: 52.625264
-           longitude: -1.140129
-       STREET: 
-           id: 1737915
+           id: 1738487
            name: On or near 
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
-           date: 2023-01
+           date: 2023-02
 
-        persistent_id: 5c67c8717fa20918a2e2600629db2f72ae326ea8e6af5e5230b8be1b359de46a
-        id: 107769095
+        persistent_id: 374aeb5ac3fd2e9558eb660bd0513cc5d09320604d8761c990f3b0f4574bf7db
+        id: 107763455
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.625297
-           longitude: -1.135754
+           latitude: 52.636111
+           longitude: -1.138053
        STREET: 
-           id: 1738161
-           name: On or near 
+           id: 1738000
+           name: On or near Freeschool Lane
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-01
 
-        persistent_id: 80e6937a58a9ceacd9de661ce0b2bec571fb9df3275b4f89abdf16f84c1c3680
-        id: 107768913
+        persistent_id: 98cc12098a74c24b087961122a6dea0f2ac060f83fec80cb05fc37efecd362f9
+        id: 107765341
         month: 2023-01
 
-bicycle theft
+burglary
 
        LOCATION: 
-           latitude: 52.620491
-           longitude: -1.138014
+           latitude: 52.632064
+           longitude: -1.150307
        STREET: 
-           id: 1738051
-           name: On or near 
+           id: 1737371
+           name: On or near Musgrove Close
+        OUTCOME_STATUS: 
+           category: Formal action is not in the public interest
+           date: 2023-01
+
+        persistent_id: 7fc24a3800c587d0cf1ec7cc97d085444ada60ff4697d5c56ead4ce3bd2c06dd
+        id: 107769388
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.625906
+           longitude: -1.129271
+       STREET: 
+           id: 1738509
+           name: On or near Tigers Way
         OUTCOME_STATUS: 
            category: Investigation complete; no suspect identified
            date: 2023-01
 
-        persistent_id: 0322a582b4246470fe5c327b47f48e3745096528b3a726503cd8209f6ef1d236
-        id: 107762844
+        persistent_id: ab9bb8c23b2c79e545066829d70c50ee1176dd67f0d756d6b1d07569fe153037
+        id: 107768019
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.630202
+           longitude: -1.147639
+       STREET: 
+           id: 1737556
+           name: On or near Ruding Road
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-03
+
+        persistent_id: bedc2197cb8b198934f5ba4f0718f3f5a10b69ba9811594b27f24ed5f5a6fb79
+        id: 107762762
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.618023
+           longitude: -1.129457
+       STREET: 
+           id: 1738421
+           name: On or near Putney Road
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 2d0910b4e89ee77e97297d7bf1d1eff5f5030286533bbe65d05898cc89710d11
+        id: 107767980
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.627052
+           longitude: -1.140875
+       STREET: 
+           id: 1737887
+           name: On or near Ullswater Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-03
+
+        persistent_id: c5b1846389417768b247896510a93000ae7422416858460f3346db7713d799ae
+        id: 107764716
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.640090
+           longitude: -1.115585
+       STREET: 
+           id: 1739244
+           name: On or near Humberstone Road
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 07171e6c9a2c990ad38faea8635e8c0bf022f837d2456797329fcf8a27f21323
+        id: 107764083
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.629059
+           longitude: -1.119250
+       STREET: 
+           id: 1739102
+           name: On or near Tichborne Street
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 67407581fb55ccf0743d6e4ac1f15b1968433b558f2bb0d56ed7d0b2845f123b
+        id: 107762518
+        month: 2023-01
+
+burglary
+
+       LOCATION: 
+           latitude: 52.634252
+           longitude: -1.130997
+       STREET: 
+           id: 1738481
+           name: On or near Granby Place
+        OUTCOME_STATUS: 
+           category: Investigation complete; no suspect identified
+           date: 2023-01
+
+        persistent_id: 2ce04fb0806b06b516e50587d1b141211f056156574302bc6abfe940f47c81ff
+        id: 107766337
         month: 2023-01
 
