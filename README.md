@@ -8,17 +8,25 @@ This tool is useful for analyzing crime patterns and trends in Leicester, provid
 
 
 
-Project github: https://github.com/Su24-CS5004-Online-Lionelle/final-project-group-7
+Project github: 
+
+https://github.com/Su24-CS5004-Online-Lionelle/final-project-group-7
+
+
 
 Group members and githubs:
+
 Emily Despres - https://github.com/zembug
 
 
 
-Link to maunal:
+Link to manual:
+
 https://github.com/Su24-CS5004-Online-Lionelle/final-project-group-7/blob/main/Manual/README.md
 
-Link to desig document:
+
+Link to design document:
+
 https://github.com/Su24-CS5004-Online-Lionelle/final-project-group-7/blob/main/DesignDocuments/README.md
 
 
