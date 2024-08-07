@@ -291,7 +291,7 @@ public class CrimeController {
         public void actionPerformed(ActionEvent e) {
             view.getListOfCrimes().setText("");
             model.clearCrimes();
-            addedCrimes.clear(); // Clear the added crimes list
+            addedCrimes.clear();
         }
     }
 
@@ -306,7 +306,7 @@ public class CrimeController {
             // Save crimes to a file using CrimeManager
             model.saveCrimesToFile("crimes.txt");
 
-            // Format and save crimes using FileWriterFormatter
+            // Format and re-save crimes using FileWriterFormatter
             try (FileOutputStream output = new FileOutputStream("crimes.xml")) {
                 List<Crime> crimesToSave;
                 if (view.getCategories().getSelectedItem().equals("all crimes")) {
