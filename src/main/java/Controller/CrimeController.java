@@ -88,9 +88,10 @@ public class CrimeController {
     private void initializeMap() {
         String latitude = "52.629729";
         String longitude = "-1.131592";
+        String apiKey = System.getenv("GOOGLE_MAPS_API_KEY");
         String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" +
                            latitude + "," + longitude +
-                          "&zoom=14&size=512x512&maptype=satellite&key=AIzaSyA0q8-kHzgWZKLG_l_jXFEu0kjDgfu8QpA";
+                          "&zoom=14&size=512x512&maptype=satellite&key=" + apiKey;
         createMapImage(imageUrl);
     }
 
